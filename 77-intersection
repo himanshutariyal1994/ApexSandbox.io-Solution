@@ -1,0 +1,10 @@
+public Set<Integer> setIntersection(Set<Integer> set1, Set<Integer> set2) {
+  Set<Integer> uniqueSet = new Set<Integer>();
+
+  for (Integer num : set1) {
+    if (set2.contains(num)) {
+      uniqueSet.add(num);
+    }
+  }
+  return uniqueSet;
+}
