@@ -1,0 +1,8 @@
+public String divide(Integer a, Integer b){
+    try {
+        return (String)Integer.valueOf(a/b);
+    } catch(Exception e) {
+        return 'Divide by 0';
+    }
+
+}
