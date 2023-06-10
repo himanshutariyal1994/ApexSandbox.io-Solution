@@ -8,20 +8,18 @@ public static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2)
 
     while(firstCurr < firstListSize && secondCurr < secondListSize) {
         if(list1[firstCurr] < list2[secondCurr]) {
-            mergedList.add(list1[firstCurr]);
-            firstCurr++;
+            mergedList.add(list1[firstCurr++]);
         } else {
-            mergedList.add(list2[secondCurr]);
-            secondCurr++;
+            mergedList.add(list2[secondCurr++]);
         }
     }
 
-    for(Integer i = firstCurr;i<=firstListSize;i++) {
-        mergedList.add(list1[i]);
+    while(firstCurr < firstListSize)
+        mergedList.add(list1[firstCurr++]);
     }
 
-    for(Integer j = secondCurr;j<=secondListSize;j++) {
-        mergedList.add(list2[j]);
+    while(secondCurr < secondListSize)
+        mergedList.add(list2[secondCurr++]);
     }
 
     return mergedList;
