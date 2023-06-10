@@ -7,6 +7,6 @@ public Boolean companionPlants(String plant1, String plant2) {
     'onions' => 'lettuce'
   };
 
-  return companionPlantsMap.get(plant1) == plant2 ||
-    companionPlantsMap.get(plant2) == plant1;
+  return ((companionPlantsMap.get(plant1) == plant2) ||
+    (companionPlantsMap.get(plant2) == plant1));
 }
