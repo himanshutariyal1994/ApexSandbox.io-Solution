@@ -1,0 +1,23 @@
+public Boolean isPalindrome(String str){
+    if(String.isBlank(str)) {
+        return true;
+    }
+
+    Pattern nonAlphanumeric = Pattern.compile('[^a-zA-Z0-9]');
+    Matcher matcher = nonAlphanumeric.matcher(str);
+    str = matcher.replaceAll('').toLowerCase(); 
+
+    Integer first = 0;
+    Integer last = str.length() - 1;
+    List<String> strList = str.split('');
+
+    while(first < last) {
+        if(strList[first] == strList[last]) {
+            first++;
+            last--;
+        } else {
+            return false;
+        }
+    }
+    return true;
+}
