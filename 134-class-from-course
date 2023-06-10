@@ -4,7 +4,7 @@ public Id classFromCourse(String courseName) {
   }
 
   List<apxio__Course__c> courseList = [
-    SELECT Id
+    SELECT Name
     FROM apxio__Course__c
     WHERE Name = :courseName
   ];
@@ -13,9 +13,11 @@ public Id classFromCourse(String courseName) {
     return null;
   }
 
+  apxio__Course__c course = courseList[0];
+
   apxio__Class__c cls = new apxio__Class__c(
-    Name = courseName,
-    apxio__Course__c = courseList[0].Id
+    Name = course.Name,
+    apxio__Course__c = course.Id
   );
   insert cls;
 
