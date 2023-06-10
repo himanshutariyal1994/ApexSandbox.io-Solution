@@ -1,8 +1,4 @@
 public Id classFromCourse(String courseName) {
-  if (String.isNotBlank(courseName)) {
-    return null;
-  }
-
   List<apxio__Course__c> courseList = [
     SELECT Name
     FROM apxio__Course__c
