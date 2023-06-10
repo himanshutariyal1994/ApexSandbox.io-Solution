@@ -1,0 +1,10 @@
+public Map<String,String> getContextUserInformation(){
+    User currentUser = [SELECT Email,Profile.Id,UserType,Username FROM User WHERE Id =:UserInfo.getUserId()];
+
+    return new Map<String,String>{
+        'EmailId' => currentUser.Email,
+        'ProfileId' => currentUser.Profile.Id,
+        'Type' => currentUser.UserType,
+        'UserName' => currentUser.Username
+    };
+}
