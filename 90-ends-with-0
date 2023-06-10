@@ -1,0 +1,4 @@
+public Boolean isEndWithZero(Integer num){
+     //code here
+     return num % 10 == 0;
+}
