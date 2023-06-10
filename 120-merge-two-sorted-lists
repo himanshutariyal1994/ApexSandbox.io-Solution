@@ -6,7 +6,7 @@ public static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2)
     Integer firstListSize = list1.size() - 1;
     Integer secondListSize = list2.size() - 1;
 
-    while(firstCurr < firstListSize && secondCurr < secondListSize) {
+    while(firstCurr <= firstListSize && secondCurr <= secondListSize) {
         if(list1[firstCurr] < list2[secondCurr]) {
             mergedList.add(list1[firstCurr++]);
         } else {
@@ -14,11 +14,11 @@ public static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2)
         }
     }
 
-    while(firstCurr < firstListSize)
+    while(firstCurr <= firstListSize)
         mergedList.add(list1[firstCurr++]);
     }
 
-    while(secondCurr < secondListSize)
+    while(secondCurr <= secondListSize)
         mergedList.add(list2[secondCurr++]);
     }
 
