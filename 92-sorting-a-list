@@ -1,4 +1,8 @@
 public List<String> getNamesInAscOrder(List<String> accountNames){
+    if(accountNames == null || accountNames.isEmpty()) {
+        return accountNames;
+    }
+    
     accountNames.sort();
     return accountNames;
 }
