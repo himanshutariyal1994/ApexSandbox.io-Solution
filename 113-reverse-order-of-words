@@ -1,0 +1,20 @@
+public String reverseWordsInASentence(String sentence){
+    if(String.isBlank(sentence)) {
+        return sentence;
+    }
+    
+    //your flawless code here
+    List<String> wordsList = sentence.split(' ');
+
+    Integer first = 0;
+    Integer last = wordsList.size() - 1;
+
+    while(first < last) {
+        String temp = wordsList[first];
+        wordsList[first] = wordsList[last];
+        wordsList[last] = temp;
+        first++;
+        last--;
+    }
+    return String.join(wordsList,' ');
+}
