@@ -1,0 +1,11 @@
+public Boolean containsDuplicates(List<Integer> nums) {
+  Set<Integer> uniqueElems = new Set<Integer>();
+
+  for (Integer num : nums) {
+    if (uniqueElems.contains(num)) {
+      return true;
+    }
+    uniqueElems.add(num);
+  }
+  return false;
+}
