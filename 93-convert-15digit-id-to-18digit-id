@@ -4,5 +4,5 @@ public String convert15to18DigitId(String fifteenDigit)
         return '-1';
     }
 
-    return Id.valueOf(fifteenDigit);
+    return (Id)fifteenDigit;
 }
