@@ -7,10 +7,10 @@ public Boolean isPrime(Integer num) {
   Integer i = 2;
   while (i <= Integer.valueOf(Math.sqrt(num))) {
     if (Math.mod(num, i) == 0) {
-      return true;
+      return false;
     }
     i++;
   }
 
-  return false;
+  return true;
 }
