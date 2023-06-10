@@ -1,0 +1,18 @@
+public void plusOne(List<Integer> numbers) {
+    if(numbers == null || numbers.isEmpty()) {
+        return;
+    }
+
+    Boolean carryOne = false;
+    for(Integer i = numbers.size() - 1;i>=0;i--) {
+        numbers[i]++;
+
+        if(numbers[i] <= 9) {
+            return;
+        }
+        else {
+            numbers[i] = 0;
+        }
+    }
+    numbers.add(0,1);
+}
