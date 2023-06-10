@@ -1,9 +1,10 @@
 public void escalateIfMeetsCriteria(Case c) {
-    Boolean mechType = ['Mechanical','Electrical'].contains(c?.Type);
-    Boolean reasonType = c.Reason == 'Breakdown';
-    Boolean statusType = c.Status == 'In Progress';
-
-    if(mechType && reasonType && statusType) {
-        c.isEscalated = true;
-    }
+  if (
+    (c.Type == 'Electrical' ||
+    c.Type == 'Mechanical') &&
+    c.Reason == 'Breakdown' &&
+    c.Status == 'In Progress'
+  ) {
+    c.isEscalated = true;
+  }
 }
