@@ -1,0 +1,14 @@
+public String changeTimeFormat(String strTime) {
+  //code here
+  Integer hrs = Integer.valueOf(strTime.substringBefore(':'));
+  String mins = strTime.substringAfter(':');
+  String timeOfDay = hrs >= 12 ? 'PM' : 'AM';
+
+  Integer hrsIn12Hr = Math.mod(hrs, 12) > 0 ? Math.mod(hrs, 12) : 12;
+
+  return String.valueOf(hrsIn12Hr).leftPad(2, '0') +
+    ':' +
+    mins +
+    ' ' +
+    timeOfDay;
+}
