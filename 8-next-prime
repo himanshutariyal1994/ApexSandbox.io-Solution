@@ -1,0 +1,24 @@
+public Integer nextPrime(Integer num) {
+  if (num < 2) {
+    return 2;
+  }
+  Integer nextPrimeNum = num + 1;
+  while (!isPrime(nextPrimeNum)) {
+    nextPrimeNum += 1;
+  }
+  return nextPrimeNum;
+}
+
+public Boolean isPrime(Integer num) {
+  if (num == 2 || num == 3) {
+    return true;
+  }
+
+  for (Integer i = 2; i <= Integer.valueOf(Math.sqrt(num)); i++) {
+    if (Math.mod(num, i) == 0) {
+      return false;
+    }
+  }
+
+  return true;
+}
