@@ -2,9 +2,9 @@ public Boolean isPrime(Integer num) {
     if(num == 2 || num == 3) {
         return true;
     }
-    
+
     //code here
-    for(Integer i = 2;i<Math.sqrt(num);i++) {
+    for(Integer i = 2;i<=Math.sqrt(num);i++) {
         if(Math.mod(num,i) == 0) {
             return true;
         }
