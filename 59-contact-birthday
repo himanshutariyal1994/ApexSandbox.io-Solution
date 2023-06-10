@@ -1,0 +1,6 @@
+public Boolean isBirthday(Contact c) {
+    Date birthDate = c.BirthDate;
+    Date todayDate = System.today();
+
+    return todayDate.day() == birthDate.day() && todayDate.month() == birthDate.month();
+}
