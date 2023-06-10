@@ -1,0 +1,23 @@
+public boolean isSorted(List<Integer> numbers) {
+  if (numbers.size() < 3) {
+    return true;
+  }
+
+  Boolean ascOrder = true;
+  Boolean descOrder = true;
+
+  for (Integer i = 0; i < numbers.size() - 1; i++) {
+    if (numbers[i] == numbers[i + 1]) {
+      continue;
+    } else if (numbers[i] < numbers[i + 1]) {
+      descOrder = false;
+    } else {
+      ascOrder = false;
+    }
+
+    if (!ascOrder && !descOrder) {
+      break;
+    }
+  }
+  return ascOrder || descOrder;
+}
