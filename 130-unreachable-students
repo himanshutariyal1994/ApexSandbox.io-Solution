@@ -6,5 +6,6 @@ public List<apxio__Student__c> selectUnreachableStudents() {
       apxio__Active__c = TRUE
       AND apxio__Email__c = NULL
       AND apxio__phone__c = NULL
+      ORDER BY Name
   ];
 }
