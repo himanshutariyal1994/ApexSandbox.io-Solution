@@ -37,6 +37,7 @@ public class LinkedList{
             this.tail.next = node;
             this.tail = node;
         }
+        this.size++;
     }
 
     // Remove element from front of linked list
