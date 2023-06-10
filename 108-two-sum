@@ -1,0 +1,14 @@
+public static List<Integer> twoSum(List<Integer> nums, Integer target) {
+    Map<Integer,Integer> mapNumberToIndex = new Map<Integer,Integer>();
+    List<Integer> indexList = new List<Integer>();
+
+    for(Integer i = 0;i<nums.size();i++) {
+        if(mapNumberToIndex.containsKey(target - nums[i])) {
+            indexList.add(i);
+            indexList.add(mapNumberToIndex.get(target-nums[i]))
+        } else {
+            mapNumberToIndex.put(nums[i],i);
+        }
+    }
+    return indexList;
+}
