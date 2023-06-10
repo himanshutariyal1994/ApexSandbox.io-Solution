@@ -1,0 +1,11 @@
+public Set<Id> accountIds(List<Opportunity> opps) {
+  Set<Id> relatedAccs = new Set<Id>();
+
+  for (Opportunity opp : opps) {
+    if (String.isNotBlank(opp.AccountId)) {
+      relatedAccs.add(opp.AccountId);
+    }
+  }
+
+  return relatedAccs;
+}
