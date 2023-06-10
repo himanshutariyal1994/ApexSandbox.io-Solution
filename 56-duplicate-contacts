@@ -1,0 +1,5 @@
+public Boolean duplicateContacts(Contact c1, Contact c2) {
+    Boolean samePhoneNumber = c1.Phone == c2.Phone;
+    Boolean sameEmail = c1.Email == c2.Email;
+    return sameEmail || samePhoneNumber;
+}
