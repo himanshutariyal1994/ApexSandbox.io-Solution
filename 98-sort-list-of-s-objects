@@ -1,0 +1,31 @@
+public List<Account> getAccounts(List<Account> accounts) {
+    if(accounts == null || accounts.isEmpty()) {
+        return accounts;
+    }
+
+    List<AccountWrapperCls> wrapperAccList = new List<AccountWrapperCls>();
+
+    for(Account acc : accounts) {
+        wrapperAccList.add(new AccountWrapperCls(acc));
+    }
+    wrapperAccList.sort();
+    accounts.clear();
+    
+    for(AccountWrapperCls awc : wrapperAccList) {
+        accounts.add(awc.acc);
+    }
+    return accounts;
+}
+
+public class AccountWrapperCls implements Comparable {
+    public Account acc; 
+
+    public AccountWrapperCls(Account acc) {
+        this.acc = acc;
+    }
+
+    public Integer compareTo(Object accObj) {
+        AccountWrapperCls acc2 = (AccountWrapperCls)accObj;
+        return acc.AnnualRevenue > acc2.acc.AnnualRevenue ? -1 : 1;
+    }
+}
