@@ -1,5 +1,8 @@
 public Boolean companionPlants(List<String> plants) {
-  if (plants == null || plants.size() < 2) {
+  if (plants == null) {
+    return true;
+  }
+  if (plants.size() < 2) {
     return false;
   }
 
