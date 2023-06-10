@@ -16,11 +16,11 @@ public static List<Integer> mergeLists(List<Integer> list1, List<Integer> list2)
         }
     }
 
-    for(Integer i = firstCurr;i<firstListSize;i++) {
+    for(Integer i = firstCurr;i<=firstListSize;i++) {
         mergedList.add(list1[i]);
     }
 
-    for(Integer j = secondCurr;j<secondListSize;j++) {
+    for(Integer j = secondCurr;j<=secondListSize;j++) {
         mergedList.add(list2[j]);
     }
 
