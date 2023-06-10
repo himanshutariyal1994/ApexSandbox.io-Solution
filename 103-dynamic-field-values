@@ -2,8 +2,6 @@ public List<String> getFieldsValue(Account acc, List<String> fields) {
   List<String> fieldsValueList = new List<String>();
 
   for (String field : fields) {
-    System.debug(field);
-    System.debug(acc.get(field));
     fieldsValueList.add(String.valueOf(acc.get(field)));
   }
   return fieldsValueList;
