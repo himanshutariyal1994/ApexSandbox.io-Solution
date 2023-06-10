@@ -1,0 +1,22 @@
+public List<Integer> twoSum(List<Integer> nums, Integer target){
+    if(nums == null || nums.isEmpty()) {
+        return new List<Integer>();
+    }
+
+    Integer first = 0;
+    Integer last = nums.size() - 1;
+    List<Integer> indexList = new List<Integer>();
+
+    while(first < last) {
+        if(nums[first] + nums[last] > target) {
+            last--;
+        } else if(nums[first] + nums[last] < target) {
+            first++;
+        } else {
+            indexList.add(first);
+            indexList.add(last);
+            return indexList;
+        }
+    }
+    return indexList;
+}
