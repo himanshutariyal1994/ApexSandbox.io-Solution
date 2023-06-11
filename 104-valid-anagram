@@ -4,13 +4,13 @@ public boolean isAnagram(String s1, String s2) {
     }
 
     Map<Integer,Integer> freqMap = new Map<Integer,Integer>();
-    for(Integer i = 0;i<26;i++) {
+    for(Integer i = 97;i<133;i++) {
         freqMap.put(i,0);
     }
 
     for(Integer i = 0;i<s1.length();i++) {
-        Integer key1 = s1.charAt(i) - 'a';
-        Integer key2 = s2.charAt(i) - 'a';
+        Integer key1 = s1.charAt(i);
+        Integer key2 = s2.charAt(i);
         freqMap.put(key1,freqMap.get(key1) + 1);
         freqMap.put(key2,freqMap.get(key2) - 1);
     }
