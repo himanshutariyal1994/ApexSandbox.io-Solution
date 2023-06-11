@@ -8,7 +8,7 @@ public boolean isAnagram(String s1, String s2) {
         freqMap.put(i,0);
     }
 
-    for(Integer i = 0;i<s1.length;i++) {
+    for(Integer i = 0;i<s1.length();i++) {
         Integer key1 = s1.charAt(i) - 'a';
         Integer key2 = s2.charAt(i) - 'a';
         freqMap.put(key1,freqMap.get(key1) + 1);
