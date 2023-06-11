@@ -15,7 +15,7 @@ public boolean isAnagram(String s1, String s2) {
         freqMap.put(key2,freqMap.get(key2) - 1);
     }
 
-    for(String key : freqMap.keySet()) {
+    for(Integer key : freqMap.keySet()) {
         if(freqMap.get(key) != 0) {
             return false;
         }
