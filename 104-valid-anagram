@@ -3,7 +3,7 @@ public boolean isAnagram(String s1, String s2) {
         return false;
     }
 
-    Map<String,Integer> freqMap = new Map<String,Integer>();
+    Map<Integer,Integer> freqMap = new Map<Integer,Integer>();
     for(Integer i = 0;i<26;i++) {
         freqMap.put(i,0);
     }
