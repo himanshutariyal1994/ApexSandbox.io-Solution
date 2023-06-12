@@ -3,22 +3,20 @@ public static List<Integer> squareList(List<Integer> nums){
         return nums;
     }
 
-    Integer left = 0;
-    Integer right = nums.size() - 1;
-    Integer highestIndex = right;
-    List<Integer> squaredNums = new List<Integer>(nums.size());
+    List<Integer> squareNums = new List<Integer>(nums.size());
+    Integer i = 0;
+    Integer j = nums.size() - 1;
+    Integer k = j;
 
-    while(left <= right) {
-        Integer leftSq = nums[left] * nums[left];
-        Integer rightSq = nums[right] * nums[right];
+    while(i <= j) {
+        Integer sq1 = nums[i]*nums[i];
+        Integer sq2 = nums[j]*nums[j];
 
-        if(leftSq > rightSq) {
-            squaredNums[highestIndex--] = leftSq;
-            left++;
+        if(sq1 >= sq2) {
+            squareNums[k--] = nums[i++];
         } else {
-            squaredNums[highestIndex--] = rightSq;
-            right--;
+            squareNums[k--] = nums[j--];
         }
     }
-    return squaredNums;
+    return squareNums;
 }
