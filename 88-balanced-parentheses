@@ -2,7 +2,7 @@ public Boolean isValid(String s){
     List<String> stack = new List<String>();
     Map<String,String> mapOpenCloseBrackets = new Map<String,String>{
         '{' => '}',
-        '(' => ')'.
+        '(' => ')',
         '[' => ']'
     };
 
