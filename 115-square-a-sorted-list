@@ -1,0 +1,24 @@
+public static List<Integer> squareList(List<Integer> nums){
+    if(nums == null || nums.isEmpty()) {
+        return nums;
+    }
+
+    Integer left = 0;
+    Integer right = nums.size() - 1;
+    Integer highestIndex = right;
+    List<Integer> squaredNums = new List<Integer>(nums.size());
+
+    while(left <= right) {
+        Integer leftSq = nums[left] * nums[left];
+        Integer rightSq = nums[right] * nums[right];
+
+        if(leftSq > rightSq) {
+            squaredNums[highestIndex--] = leftSq;
+            left++;
+        } else {
+            squaredNums[highestIndex--] = rightSq;
+            right--;
+        }
+    }
+    return squaredNums;
+}
