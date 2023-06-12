@@ -8,14 +8,13 @@ public List<Integer> twoSum(List<Integer> nums, Integer target){
     List<Integer> indexList = new List<Integer>();
 
     while(first < last) {
-        if(nums[first] + nums[last] > target) {
-            last--;
-        } else if(nums[first] + nums[last] < target) {
-            first++;
-        } else {
+        if(nums[first] + nums[last] == target) {
             indexList.add(first);
             indexList.add(last);
-            return indexList;
+        } else if(nums[first] + nums[last] > target) {
+            last--;
+        } else {
+            first++;
         }
     }
     return indexList;
