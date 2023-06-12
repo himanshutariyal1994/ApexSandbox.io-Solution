@@ -46,7 +46,7 @@ public class LinkedList{
             return null;
         }
 
-        Integer nodeVal = this.head.value;
+        Integer nodeVal = this.head.data;
         this.head = this.head.next;
         this.size--;
         return nodeVal;
@@ -60,7 +60,7 @@ public class LinkedList{
 
         Integer nodeVal;
         if(this.size == 1) {
-             nodeVal = this.head.value;
+            nodeVal = this.head.data;
             this.head = null;
             this.size--;
             return nodeVal;
