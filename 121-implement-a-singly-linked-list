@@ -74,7 +74,7 @@ public class LinkedList{
             current = current.next;
         }
 
-        nodeVal = current.value;
+        nodeVal = current.data;
         previous.next = null;
         this.tail = previous;
         this.size--;
