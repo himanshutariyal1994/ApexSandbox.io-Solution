@@ -7,7 +7,7 @@ public static String reverseWords(String str){
 }
 
 public static String reverse(String word) {
-    if(word == null || word.isEmpty()) {
+    if(word == null || String.isBlank(word)) {
         return word;
     }
 
