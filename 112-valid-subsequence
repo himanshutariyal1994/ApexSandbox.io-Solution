@@ -1,0 +1,15 @@
+public Boolean isSubSequence(String s1, String s2){
+    Integer s1first = 0;
+    Integer s2first = 0;
+    Integer s1end = s1.length();
+    Integer s2end = s2.length();
+
+    while(s1first < s1end && s2first < s2end) {
+        if(s1.charAt(s1first) == s2.charAt(s2first)) {
+            s1first++;
+        } else {
+            s2first++;
+        }
+    }
+    return s1first == s1end;
+}
