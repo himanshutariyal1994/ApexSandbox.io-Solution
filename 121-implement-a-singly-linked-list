@@ -1,84 +1,85 @@
 public class LinkedList{
-    
-    public Node head;
-    public Node tail;
-    public Integer size;
+    Node head;
+    Node tail;
+    Integer size;
 
     public LinkedList() {
         this.head = null;
         this.tail = null;
         this.size = 0;
     }
-
-    // Add element to the front of LL
-    public void addToFront(Integer value){
-        Node node = new Node();
-        node.data = value;
-
-        if(this.head == null) {
-            this.head = node;
-            this.tail = node;
-        } else {
-            node.next = this.head;
-            this.head = node;
-        }
-        this.size++;
-    }
-
-    // Add element to the end of LL
-    public void addToTail(Integer value){
-        Node node = new Node();
-        node.data = value;
-
-        if(this.head == null) {
-            this.head = node;
-            this.tail = node;
-        } else {
-            this.tail.next = node;
-            this.tail = node;
-        }
-        this.size++;
-    }
-
-    // Remove element from front of linked list
-    public Integer removeFromFront(){
-        if(this.head == null) {
-            return null;
-        }
-
-        Integer nodeVal = this.head.data;
-        this.head = this.head.next;
-        this.size--;
-        return nodeVal;
-    }
     
-    // Remove element from end of linked list
+    public void addToFront(Integer value){
+        Node n = new Node();
+        n.data = value;
+
+        if(this.head == null) {
+            this.head = n;
+            this.tail = n;
+        } else {
+            n.next = this.head;
+            this.head = n;
+        }
+        this.size++;
+    }
+
+    public Integer removeFromFront(){
+        if(this.size == 0) {
+            return null;
+        }
+        
+        if(this.size == 1) {
+            Integer data = this.head.data;
+            this.head = null;
+            this.tail = null;
+            return data;
+        } 
+
+        Node current = this.head;
+        this.head = this.head.next;
+        current.next = null;
+        this.size--;
+        return current.data;
+    }
+
+    public void addToTail(Integer value){
+        Node n = new Node();
+        n.data = value;
+
+        if(this.head == null) {
+            this.head = n;
+            this.tail = n;
+        } else {
+            this.tail.next = n;
+            this.tail = n;
+        }
+        this.size++;
+    }
+
     public Integer removeFromTail(){
-        if(this.tail == null) {
+        if(this.size == 0) {
             return null;
         }
 
-        Integer nodeVal;
         if(this.size == 1) {
-             nodeVal = this.head.data;
+            Integer data = this.head.data;
             this.head = null;
-            this.size--;
-            return nodeVal;
-        }
+            this.tail = null;
+            return data;
+        } 
 
         Node current = this.head;
         Node previous = null;
-        
+
         while(current.next != null) {
             previous = current;
             current = current.next;
         }
-
-        nodeVal = current.data;
+        
         previous.next = null;
         this.tail = previous;
         this.size--;
-        return nodeVal;
+        return current.data;
     }
 
     public Integer size(){
