@@ -11,6 +11,7 @@ public List<Integer> twoSum(List<Integer> nums, Integer target){
         if(nums[first] + nums[last] == target) {
             indexList.add(first);
             indexList.add(last);
+            return indexList;
         } else if(nums[first] + nums[last] > target) {
             last--;
         } else {
