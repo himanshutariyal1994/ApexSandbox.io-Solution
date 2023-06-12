@@ -9,7 +9,7 @@ public static void segregateEvenOdd(List<Integer> numbers){
     while(left < right) {
         if(Math.mod(numbers[left],2) == 0) {
             left++;
-        } else if(Math.mod(numbers[right],2) != 0)) {
+        } else if(Math.mod(numbers[right],2) != 0) {
             right--;
         } else {
             Integer temp = numbers[left];
