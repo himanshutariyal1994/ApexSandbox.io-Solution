@@ -8,7 +8,7 @@ public static Integer maxSubArraySum(List<Integer> nums, Integer target){
     currSum = maxSum;
 
     for(Integer i = target;i<nums.size();i++) {
-        currSum = currSum + target[i] - target[i - target];
+        currSum = currSum + nums[i] - nums[i - target];
         if(currSum > maxSum) {
             maxSum = currSum;
         }
