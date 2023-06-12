@@ -9,9 +9,9 @@ public static Integer search(List<Opportunity> opportunities, Integer target){
 
     while(left < right) {
         mid = (left+right)/2;
-        if(opportunities[mid] > target) {
+        if(opportunities[mid].Amount > target) {
             right = mid-1;
-        } else if(opportunities[mid] < target) {
+        } else if(opportunities[mid].Amount < target) {
             left = mid+1;
         } else {
             return mid;
