@@ -15,7 +15,7 @@ public class LinkedList{
 
         if(this.head == null) {
             this.head = n;
-            this.tail = n;
+            this.tail = this.head;
         } else {
             n.next = this.head;
             this.head = n;
@@ -40,7 +40,7 @@ public class LinkedList{
 
         if(this.head == null) {
             this.head = n;
-            this.tail = n;
+            this.tail = this.head;
         } else {
             this.tail.next = n;
             this.tail = n;
