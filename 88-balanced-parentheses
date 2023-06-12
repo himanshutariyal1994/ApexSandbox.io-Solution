@@ -1,21 +1,17 @@
 public Boolean isValid(String s){
     List<String> stack = new List<String>();
-    Map<String,String> mapOpeningClosingBrace = new Map<String,String>{
-        '(' => ')',
+    Map<String,String> mapOpenCloseBrackets = new Map<String,String>{
         '{' => '}',
+        '(' => ')'.
         '[' => ']'
     };
 
-    for(String c : s.split('')) {
-        if(mapOpeningClosingBrace.containsKey(c)) {
-            stack.add(c);
+    for(String char : s.split('')) {
+        if(mapOpenCloseBrackets.containsKey(char)) {
+            stack.add(char);
         } else {
-            if(stack.isEmpty()) {
-                return false;
-            }
-
-            String poppedEle = (String)stack.remove(stack.size() - 1);
-            if(c != mapOpeningClosingBrace.get(poppedEle)) {
+            String poppedEle = stack.remove(stack.size()-1);
+            if(char != mapOpenCloseBrackets.get(poppedEle)) {
                 return false;
             }
         }
