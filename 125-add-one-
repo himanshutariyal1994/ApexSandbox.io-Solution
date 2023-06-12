@@ -9,7 +9,6 @@ public void plusOne(List<Integer> numbers) {
         if(numbers[i] <= 9) {
             return;
         }
-
         numbers[i] = 0;
     }
     numbers.add(0,1);
