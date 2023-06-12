@@ -12,7 +12,7 @@ public Boolean isPalindrome(String str){
     Integer right = charList.size() - 1;
 
     while(left < right) {
-        if(charList[left] != charList[right]) {
+        if(charList[left++] != charList[right--]) {
             return false;
         }
     }
