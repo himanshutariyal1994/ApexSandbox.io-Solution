@@ -13,7 +13,7 @@ public static String reverse(String word) {
 
     List<String> chars = word.split('');
     Integer first = 0;
-    Integer last = chars.size();
+    Integer last = chars.size()-1;
 
     while(first < last) {
         String temp = chars[first];
