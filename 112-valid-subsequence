@@ -7,9 +7,8 @@ public Boolean isSubSequence(String s1, String s2){
     while(s1first < s1end && s2first < s2end) {
         if(s1.charAt(s1first) == s2.charAt(s2first)) {
             s1first++;
-        } else {
-            s2first++;
         }
+        s2first++;
     }
     return s1first == s1end;
 }
