@@ -1,0 +1,14 @@
+public void defragging(Integer[] memory){
+    Integer leftPtr =0;
+    Integer rghtPtr = memory.size()-1;
+    for(Integer i =0;i<memory.size(); i++){
+        if(memory[i]!=-1){
+            memory[leftPtr] = memory[i];
+            leftPtr++;
+        }
+    }
+
+    for(Integer i =leftPtr;i<memory.size(); i++){
+        memory[i] = -1;
+    }
+}
