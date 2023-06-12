@@ -7,7 +7,7 @@ public Integer maxProfit(List<Integer> prices){
             price = minPrice;
         }
         if(price - minPrice > profit) {
-            profit = price - minPrice;
+            profit = Math.max(price - minPrice,profit);
         }
     }
     return profit;
