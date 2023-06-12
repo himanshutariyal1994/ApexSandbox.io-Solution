@@ -27,17 +27,9 @@ public class LinkedList{
         if(this.size == 0) {
             return null;
         }
-        
-        if(this.size == 1) {
-            Integer data = this.head.data;
-            this.head = null;
-            this.tail = null;
-            return data;
-        } 
 
         Node current = this.head;
         this.head = this.head.next;
-        current.next = null;
         this.size--;
         return current.data;
     }
@@ -60,13 +52,6 @@ public class LinkedList{
         if(this.size == 0) {
             return null;
         }
-
-        if(this.size == 1) {
-            Integer data = this.head.data;
-            this.head = null;
-            this.tail = null;
-            return data;
-        } 
 
         Node current = this.head;
         Node previous = null;
