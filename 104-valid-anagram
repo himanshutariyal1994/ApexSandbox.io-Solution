@@ -1,25 +1,24 @@
 public boolean isAnagram(String s1, String s2) {
-    if(s1 == null || s2 == null || s1.length() != s2.length()) {
+    if(s1 == null || s2 == null || s1.size() != s2.size()) {
         return false;
     }
 
-    Map<Integer,Integer> freqMap = new Map<Integer,Integer>();
+    Map<Integer,Integer> mapFreqToCount = new Map<Integer,Integer>();
     for(Integer i = 97;i<133;i++) {
-        freqMap.put(i,0);
+        mapFreqToCount.put(i,0);
     }
 
     for(Integer i = 0;i<s1.length();i++) {
         Integer key1 = s1.charAt(i);
         Integer key2 = s2.charAt(i);
-        freqMap.put(key1,freqMap.get(key1) + 1);
-        freqMap.put(key2,freqMap.get(key2) - 1);
+        mapFreqToCount.put(key1,mapFreqToCount.get(key1) + 1);
+        mapFreqToCount.put(key2,mapFreqToCount.get(key2) - 1);
     }
 
-    for(Integer key : freqMap.keySet()) {
-        if(freqMap.get(key) != 0) {
+    for(Integer key : mapFreqToCount.keySet()) {
+        if(mapFreqToCount.get(key) != 0) {
             return false;
         }
     }
     return true;
-    
 }
