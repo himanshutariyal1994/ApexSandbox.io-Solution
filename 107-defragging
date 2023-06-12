@@ -11,6 +11,7 @@ public void defragging(Integer[] memory){
         if(memory[i] != -1) {
             memory[left++] = memory[i];
         }
+        i++;
     }
 
     while(left < size) {
