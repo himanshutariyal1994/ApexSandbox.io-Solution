@@ -1,15 +1,14 @@
 public Integer maxProfit(List<Integer> prices){
-  Integer profit = 0;
-  Integer minPrice = 10000;
+    Integer minPrice = 10000;
+    Integer profit = 0;
 
-  for (Integer price : prices) {
-    if (price < minPrice) {
-      minPrice = price;
+    for(Integer price : prices) {
+        if(price < minPrice) {
+            price = minPrice;
+        }
+        if(price - minPrice > profit) {
+            profit = price - minPrice;
+        }
     }
-
-    if (price - minPrice > profit) {
-      profit = price - minPrice;
-    }
-  }
-  return profit;
+    return profit;
 }
