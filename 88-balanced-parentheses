@@ -6,12 +6,12 @@ public Boolean isValid(String s){
         '[' => ']'
     };
 
-    for(String char : s.split('')) {
-        if(mapOpenCloseBrackets.containsKey(char)) {
-            stack.add(char);
+    for(String ch : s.split('')) {
+        if(mapOpenCloseBrackets.containsKey(ch)) {
+            stack.add(ch);
         } else {
             String poppedEle = stack.remove(stack.size()-1);
-            if(char != mapOpenCloseBrackets.get(poppedEle)) {
+            if(ch != mapOpenCloseBrackets.get(poppedEle)) {
                 return false;
             }
         }
