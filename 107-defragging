@@ -1,6 +1,6 @@
 public void defragging(Integer[] memory){
     if(memory == null || memory.isEmpty()) {
-        return memory;
+        return;
     }
 
     Integer left = 0;
